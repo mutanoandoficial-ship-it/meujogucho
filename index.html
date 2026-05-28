@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Meu Jogo do Telegram</title>
+    <style>
+        body { margin: 0; background: #222; color: white; text-align: center; font-family: Arial, sans-serif; }
+        #game-box { margin-top: 50px; }
+        button { padding: 15px 30px; font-size: 18px; cursor: pointer; border-radius: 8px; border: none; background: #2481cc; color: white; }
+    </style>
+</head>
+<body>
+
+    <div id="game-box">
+        <h1>Clique no Botão!</h1>
+        <p>Pontuação: <span id="score">0</span></p>
+        <button onclick="marcarPonto()">CLIQUE AQUI</button>
+    </div>
+
+    <!-- Script oficial de jogos do Telegram -->
+    <script src="https://telegram.org/js/games.js"></script>
+    <script>
+        let pontos = 0;
+        function marcarPonto() {
+            pontos++;
+            document.getElementById('score').innerText = pontos;
+            
+            // Exemplo de envio de pontuação de volta para o Telegram (opcional)
+            // TelegramGameProxy.shareScore(); 
+        }
+    </script>
+</body>
+</html>
